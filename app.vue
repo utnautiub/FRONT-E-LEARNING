@@ -24,7 +24,8 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-
+import { useToast } from '@/components/ui/toast/use-toast'
+const { toast } = useToast()
 const colorMode = useColorMode()
 </script>
 
@@ -103,4 +104,17 @@ const colorMode = useColorMode()
       </DialogFooter>
     </DialogContent>
   </Dialog>
+  <Button
+    variant="outline" @click="() => {
+      toast({
+        title: 'Scheduled: Catchasasdasd up',
+        description: 'Friday, February 10, 2023 at 5:57 PM',
+      });
+    }"
+  >
+    Add to calendar
+  </Button>
+  <ClientOnly>
+    <Toaster />
+  </ClientOnly>
 </template>
